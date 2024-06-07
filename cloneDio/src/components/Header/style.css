@@ -1,0 +1,34 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container-header {
+    width: 100%;
+    height: 7%;
+    background-color: #151515;
+    padding: 8px 100px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-header img {
+    width: 50px;
+}
+
+.Header-infos {
+    min-width: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Header-infos a {
+    color: #ffffff;
+}
+
+.Header-infos .button {
+    background-color: #565656;
+    padding: 1px 45px;
+    border-radius: 25px;
+}
