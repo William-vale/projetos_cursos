@@ -1,9 +1,9 @@
 import React from "react";
-import { Container } from './style';
+import { Container, Titulo } from './style';
 
 const Login: React.FC = () => 
     <Container>
-        
-    </ Container>;
+        <Titulo>Login</Titulo>
+    </Container>;
 
 export default Login;
