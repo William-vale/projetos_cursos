@@ -14,7 +14,7 @@ export const Titulo = styled.h1`
     font-family: 'Opens Sans';
 `;
 
-export const Entradas = styled.span`
+export const Entradas = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,6 +36,10 @@ export const Inputs = styled.input`
     }
 `;
 
+export const MessageOutput = styled.p`
+    color: red;
+`;
+
 export const Button = styled.button`
     width: 100%;
     height: 45px;
@@ -48,5 +52,9 @@ export const Button = styled.button`
 
     &:hover{
         border: 3px solid black;
-    } 
+    }
+
+    &:disabled {
+        color: black;
+    }
 `;
