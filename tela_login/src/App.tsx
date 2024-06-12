@@ -1,7 +1,7 @@
 import React from "react";
 import { Corpo } from "./style";
 import Login from "./pages/Login";
-import GlobalStyle from "./globals/globalstyle"
+import GlobalStyle from "./globals/globalstyle";
 
 const App: React.FC = () => {
   return (
