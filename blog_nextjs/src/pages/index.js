@@ -30,3 +30,11 @@ export default function Home({ posts, globalData }) {
         </Layout>
     );
 }
+
+export async function getServerSideProps() {
+    const posts = await getPosts();
+    const globalData = getGlobalData()
+  
+  
+    return { props: { posts, globalData } };
+  }
