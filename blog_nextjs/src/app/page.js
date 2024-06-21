@@ -1,14 +1,15 @@
-import Link from 'next/link';
-import { getPosts } from '../utils/mdx-utils';
+import Link from "next/link";
+import { getPosts } from "./../utils/mdx-utils";
+import { InferGetServerSidePropsType, GetServerSideProps } from "next";
 
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import Layout, { GradientBackground } from '../components/Layout';
-import ArrowIcon from '../components/ArrowIcon';
-import { getGlobalData } from '../utils/global-data';
-import SEO from '../components/SEO';
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import Layout, { GradientBackground } from "../components/Layout";
+import ArrowIcon from "../components/ArrowIcon";
+import { getGlobalData } from "../utils/global-data";
+import SEO from "../components/SEO";
 
-export default function Index({ posts, globalData }) {
+export default function Page({ posts, globalData }) {
   return (
     <Layout>
       <SEO title={globalData.name} description={globalData.blogTitle} />
@@ -23,10 +24,7 @@ export default function Index({ posts, globalData }) {
               key={post.id}
               className="md:first:rounded-t-lg md:last:rounded-b-lg backdrop-blur-lg bg-white dark:bg-black dark:bg-opacity-30 bg-opacity-10 hover:bg-opacity-20 dark:hover:bg-opacity-50 transition border border-gray-800 dark:border-white border-opacity-10 dark:border-opacity-10 border-b-0 last:border-b hover:border-b hovered-sibling:border-t-0"
             >
-              <Link
-                as={`/posts/${post.id}`}
-                href={`/posts/${post.id}`}
-              >
+              <Link as={`/posts/${post.id}`} href={`/posts/${post.id}`}>
                 <a className="py-6 lg:py-10 px-6 lg:px-16 block focus:outline-none focus:ring-4">
                   {post.created_ate && (
                     <p className="uppercase mb-3 font-bold opacity-60">
@@ -51,7 +49,7 @@ export default function Index({ posts, globalData }) {
         variant="large"
         className="fixed top-20 opacity-40 dark:opacity-60"
       />
-      <GradientBackground
+      <GradientBackgrounds
         variant="small"
         className="absolute bottom-0 opacity-20 dark:opacity-10"
       />
@@ -61,8 +59,7 @@ export default function Index({ posts, globalData }) {
 
 export async function getServerSideProps() {
   const posts = await getPosts();
-  const globalData = getGlobalData()
-
+  const globalData = getGlobalData();
 
   return { props: { posts, globalData } };
-}
+};
